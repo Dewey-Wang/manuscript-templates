@@ -34,17 +34,17 @@ Changes include:
 - support for ORCiDs using `\orcidlink`
 - Helvetica for readability
 - greater range of custom units
-- refactored into one single class - thank you to Dominik Straub for his work on [this fork](https://github.com/dominikstrb/manuscript-templates).
+- simplified directory structure
 
 ## What do they look like?
 
 ### Preprint version (for bioRxiv)
 
-![img](img/Example_bioRxiv.png?raw=true "image")
+![img](img/Example_bioRxiv.jpg?raw=true "image")
 
 ### Journal submission version
 
-![img](img/Example_submit.png?raw=true "image")
+![img](img/Example_submit.jpg?raw=true "image")
 
 
 ## Further details
