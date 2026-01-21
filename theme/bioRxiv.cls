@@ -1,16 +1,13 @@
 %%
 %% This is file `bioRxiv.cls'
-%% Forked from `RoyleLab-StyleBioRxiv.cls'
-%% Forked from `zHenriquesLab-StyleBioRxiv.cls',
 %%
-%% Class files for pre-print servers such as bioRxiv
-%%
-%% Copyright (C) Ricardo Henriques <r.henriques@ucl.ac.uk>
+%% Class file for pre-print servers such as bioRxiv
+%% A fork from HenriquesLab bioRxiv class, based on PNAS.cls
 %%
 
-\typeout{Document Class `bioRxiv' <03-January-2022>.}
+\typeout{Document Class `bioRxiv' <21-January-2026>.}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{bioRxiv}[2022/01/03 revision by Dominik Straub]
+\ProvidesClass{theme/bioRxiv}[2026/01/21 bioRxiv preprint class]
 
 % \AtEndOfClass{\RequirePackage{microtype}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
@@ -48,7 +45,7 @@
 \RequirePackage{mathptmx}
 \RequirePackage{xcolor}
 \RequirePackage{authblk}
-\RequirePackage[latin1,utf8]{inputenc}
+\RequirePackage[utf8]{inputenc}
 \RequirePackage[english]{babel}
 \RequirePackage{lmodern}
 \RequirePackage[detect-all=true]{siunitx}
@@ -59,9 +56,10 @@
 \else
   \usepackage{hyphenat}
 \fi
-% reduce the spacing after a full-stop
+%% uncomment to reduce the spacing after a full-stop
 %\frenchspacing
-% this line causes a l3regex obsolete warning - problem seems Overleaf-side
+
+%% this line causes a l3regex obsolete warning - problem seems Overleaf-side
 \RequirePackage[version=4]{mhchem}
 %% Units
 \DeclareSIUnit\molar{\mole\per\cubic\deci\metre}
@@ -71,13 +69,13 @@
 \DeclareSIUnit\rpm{\textnormal{rpm}}
 \DeclareSIUnit\pixel{\textnormal{px}}
 \DeclareSIUnit\electron{\textnormal{e\textsuperscript{--}}}
-\DeclareSIUnit\angstrom{\protect \text {Å}}
+\DeclareSIUnit\angstrom{\text{\AA}}
 
 \RequirePackage[scaled]{helvet}
 \RequirePackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
 \RequirePackage{lettrine} % For dropped capitals
 \RequirePackage[rightcaption]{sidecap} % For sidecaptions
+%% uncomment to have sidecaptions at the top
 %\sidecaptionvpos{figure}{t}
 \RequirePackage[misc]{ifsym} % For the \Letter symbol
 \RequirePackage{bbding} % For the \Envelope symbol
@@ -266,7 +264,6 @@
   {#1}
 
 %% from here on there remain differences for the submit style
-%% TODO: check these out (from l. 245 in StyleSubmit.cls)
 \titlespacing*{\section}{0pc}{3ex \@plus4pt \@minus3pt}{5pt}
 \if@submit
   \titlespacing*{\subsection}{0pc}{3ex \@plus4pt \@minus2pt}{4pt}
@@ -290,7 +287,7 @@
 \DeclareCaptionFormat{largeformat}{\normalfont\sffamily\fontsize{9}{12}\selectfont#1#2#3}
 \captionsetup*{format=smallformat}
 
-% %% Watermark
+%% Watermark
 % \usepackage[printwatermark]{xwatermark}
 % \AtBeginDocument{%
 %   \ifwatermark%
@@ -321,7 +318,7 @@
 \makeatletter
 \renewcommand\@biblabel[1]{ #1.} % Remove brackets from label
 \def\tagform@#1{\maketag@@@{\bfseries(\ignorespaces#1\unskip\@@italiccorr)}}
-\renewcommand{\eqref}[1]{\textup{{\normalfont Eq.~(\ref{#1}}\normalfont)}}
+\renewcommand{\eqref}[1]{\textup{Eq.~(\ref{#1})}}
 % \makeatother
 
 %% Title
@@ -457,8 +454,9 @@
 
 %% Default rules for including pictures
 \RequirePackage{graphicx}
-\RequirePackage{color}
 \DeclareGraphicsRule{*}{eps}{*}{}
+% allow class to find images placed in `theme/` or `figures/`
+\graphicspath{{theme/}{figures/}}
 
 %% Page headers and footers
 %%
@@ -480,15 +478,15 @@
   }}
 \else
   \def\aBioRXiv{{\footnotesize
-      \footerfont \@leadauthor\ifnum \value{authors} > 2\hspace{2pt}\textit{et al.}\fi\hspace{7pt}|\hspace{7pt}\includegraphics[width=1cm, trim=0 1.5cm 0 0]{bioRxiv_logo} \hspace{7pt}|\hspace{7pt}\today\hspace{7pt}|\hspace{7pt}\thepage\textendash\pageref{LastPage}
+      \footerfont \@leadauthor\ifnum \value{authors} > 2\hspace{2pt}\textit{et al.}\fi\hspace{7pt}|\hspace{7pt}\includegraphics[width=1cm, trim=0 1.5cm 0 0]{theme/bioRxiv_logo.png} \hspace{7pt}|\hspace{7pt}\today\hspace{7pt}|\hspace{7pt}\thepage\textendash\pageref{LastPage}
     }}
 
   \def\bBioRXiv{{\footnotesize
-      \footerfont \thepage\hspace{7pt}|\hspace{7pt}\includegraphics[width=1cm, trim=0 1.5cm 0 0]{bioRxiv_logo}
+      \footerfont \thepage\hspace{7pt}|\hspace{7pt}\includegraphics[width=1cm, trim=0 1.5cm 0 0]{theme/bioRxiv_logo}
     }}
 
   \def\cBioRXiv{{\footnotesize
-      \footerfont \includegraphics[width=1cm, trim=0 1.5cm 0 0]{bioRxiv_logo}\hspace{7pt}|\hspace{7pt}\thepage
+      \footerfont \includegraphics[width=1cm, trim=0 1.5cm 0 0]{theme/bioRxiv_logo}\hspace{7pt}|\hspace{7pt}\thepage
     }}
 \fi
 

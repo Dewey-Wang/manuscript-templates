@@ -1,7 +1,12 @@
 %% select between bioRxiv style or submission style by commenting either line
-\documentclass[twocolumn]{bioRxiv}
-%\documentclass[submit]{bioRxiv}
+% class files moved into `theme/` — reference via relative path
+\documentclass[twocolumn]{theme/bioRxiv}
+% \documentclass[submit]{theme/bioRxiv}
+
+%% forces sans serif
 \renewcommand\familydefault{\sfdefault}
+
+%% for this example - not needed for manuscript
 \usepackage{lipsum}
 
 %% setup specific to this preprint -- add or remove as you need.
@@ -11,6 +16,8 @@
         multi-part-units = single,
         range-phrase = --} % units setup
 \usepackage{multirow} % allows merging of cells in tables
+
+%% the document starts here
 
 \begin{document}
 
