@@ -49,7 +49,7 @@ As you can see (Figure \ref{fig:cells}).
 % full size figure is figure*
 \begin{figure*}
 \centering
-\includegraphics[width=0.75\linewidth]{Figures/temp.png}
+\includegraphics[width=0.75\linewidth]{figures/temp.png}
 \caption{\textbf{These are cells.}\\
 (\textbf{A}) This is a regular figure with a legend as a caption underneath. Inset: 3X zoom. Scale bar, \SI{10}{\micro\meter}.}
 \label{fig:cells}
@@ -61,8 +61,8 @@ Or like this (Supplementary Figure \ref{videosupp:lysosome}).
 
 \subsection*{Working with tables and equations}
 
-References to a table can be included here like this (Table \ref{tab:t1}.
-If you have a Supplementary Table sections you can reference one of those tables like this (Supplementary Table \ref{supptab:st1}
+References to a table can be included here like this (Table \ref{tab:t1}).
+If you have a Supplementary Table sections you can reference one of those tables like this (Supplementary Table \ref{supptab:st1})
 
 \begin{table}[h] % h means "here"
     \centering
@@ -93,9 +93,10 @@ To include an equation, you can write in-line math like this, $e = mc^2$, or you
 \lipsum[11]
 
 % one-column size figure is figure
+% note that when using `submit` class option, the width will refer to the full page, so adjust accordingly
 \begin{figure}
 \centering
-\includegraphics[width=0.75\linewidth]{Figures/temp.png}
+\includegraphics[width=0.75\linewidth]{figures/temp.png}
 \caption{\textbf{This is a nucleus.}\\
 (\textbf{A}) This is a one-column figure with a legend as a caption underneath.}
 \label{fig:nucleus}
@@ -155,5 +156,5 @@ The authors declare no conflict of interest.
 \end{interests}
 
 \section*{References}
-\bibliographystyle{bxv_abbrvnat}
+\bibliographystyle{theme/bxv_abbrvnat}
 \bibliography{refs.bib}

@@ -13,7 +13,7 @@ The ideal template should be able to switch between these two manuscript layouts
 ## Use
 
 To use, just clone this repo and import into Overleaf or a directory on your own computer to use a local LaTeX installation.
-The following files and folders are not required: `img`, `Examples`, `README.md`.
+The following files and folders are not required: `img`, `examples`, `README.md`, `LICENSE`.
 
 Write your manuscript in `01_Article_MainText.tex` and then comment either line 2 or 3 of `00_Article_Merge.tex` to select between outputs.
 There are optional Supplementary tex files that can also be edited.
@@ -54,4 +54,4 @@ There are a few things to be aware of:
 
 - the manuscript is compiled from separate `.tex` files which are listed in `00_Article_Merge.tex`. The first included `.tex` file is the main text (`01_Article_MainText.tex`) and this has its own reference section, which means that a subsequent "Supplementary Information" section will have a separate reference section.
 - switching from the preprint version (`\documentclass[twocolumn]{bioRxiv}`) to the plain manuscript version (`\documentclass[submit]{bioRxiv}`) works well, but has some foibles. Any figures that use `figure{}` environment rather than `figure*{}` may need resizing by a factor of 0.5 to remain at the intended size.
-- figures should be prepared as a single file and placed in the `Figures` folder - use of figures compiled from multiple files in LaTeX is not supported.
+- figures should be prepared as a single file and placed in the `figures` folder - use of figures compiled from multiple files in LaTeX is not supported.

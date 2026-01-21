@@ -7,7 +7,7 @@
 
 \typeout{Document Class `bioRxiv' <21-January-2026>.}
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{bioRxiv}[2026/01/21 bioRxiv preprint class]
+\ProvidesClass{theme/bioRxiv}[2026/01/21 bioRxiv preprint class]
 
 % \AtEndOfClass{\RequirePackage{microtype}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
@@ -455,6 +455,8 @@
 %% Default rules for including pictures
 \RequirePackage{graphicx}
 \DeclareGraphicsRule{*}{eps}{*}{}
+% allow class to find images placed in `theme/` or `figures/`
+\graphicspath{{theme/}{figures/}}
 
 %% Page headers and footers
 %%
@@ -476,15 +478,15 @@
   }}
 \else
   \def\aBioRXiv{{\footnotesize
-      \footerfont \@leadauthor\ifnum \value{authors} > 2\hspace{2pt}\textit{et al.}\fi\hspace{7pt}|\hspace{7pt}\includegraphics[width=1cm, trim=0 1.5cm 0 0]{bioRxiv_logo} \hspace{7pt}|\hspace{7pt}\today\hspace{7pt}|\hspace{7pt}\thepage\textendash\pageref{LastPage}
+      \footerfont \@leadauthor\ifnum \value{authors} > 2\hspace{2pt}\textit{et al.}\fi\hspace{7pt}|\hspace{7pt}\includegraphics[width=1cm, trim=0 1.5cm 0 0]{theme/bioRxiv_logo.png} \hspace{7pt}|\hspace{7pt}\today\hspace{7pt}|\hspace{7pt}\thepage\textendash\pageref{LastPage}
     }}
 
   \def\bBioRXiv{{\footnotesize
-      \footerfont \thepage\hspace{7pt}|\hspace{7pt}\includegraphics[width=1cm, trim=0 1.5cm 0 0]{bioRxiv_logo}
+      \footerfont \thepage\hspace{7pt}|\hspace{7pt}\includegraphics[width=1cm, trim=0 1.5cm 0 0]{theme/bioRxiv_logo}
     }}
 
   \def\cBioRXiv{{\footnotesize
-      \footerfont \includegraphics[width=1cm, trim=0 1.5cm 0 0]{bioRxiv_logo}\hspace{7pt}|\hspace{7pt}\thepage
+      \footerfont \includegraphics[width=1cm, trim=0 1.5cm 0 0]{theme/bioRxiv_logo}\hspace{7pt}|\hspace{7pt}\thepage
     }}
 \fi
 
