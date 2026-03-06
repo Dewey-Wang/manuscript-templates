@@ -226,7 +226,7 @@
   \renewcommand\Affilfont{\color{color1}\normalfont\sffamily\fontsize{7}{8}\selectfont}
   \makeatletter
   % comment the following line to have affiliations on separate lines
-  \renewcommand\AB@affilsepx{; \protect\Affilfont}
+  \renewcommand\AB@affilsepx{\\}
   \renewcommand\Authands{, and }
 \fi
 
