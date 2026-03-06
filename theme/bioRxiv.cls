@@ -305,7 +305,8 @@
 
 %% bibliography
 \RequirePackage{chapterbib} % outside of Overleaf, comment this line
-\RequirePackage[sectionbib,authoryear,round]{natbib}
+%\RequirePackage[sectionbib,authoryear,round]{natbib}
+\RequirePackage[sectionbib,numbers,super,sort&compress]{natbib}
 \setlength{\bibsep}{0.0pt}
 \bibliographystyle{bxv_abbrvnat}
 \renewcommand{\bibsection}{} % Remove header
